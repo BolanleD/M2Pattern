@@ -9,24 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 });
 
-/*fetch('http://localhost:3000/data')
-  .then((response) => response.json())
-  .then((data) => {
-      var w = data.waist;
-      var h = data.hip;
-      var shd = data.side_hip_depth;
-      var fhd = data.front_hip_depth;
-      var bhd = data.back_hip_depth;
-      var sl = data.skirt_length;
-      var bha = data.back_hip_arc;
-  })
-    $.getJSON('/data.json', function (data) {
-    console.log(data)
-  
-  .catch((e) => {
-    console.log(e);
-  });*/
-//var dataurl = 'data.json';
+
 function loadJSON(callback) {
 
   var skirtObj = new XMLHttpRequest();
@@ -35,8 +18,7 @@ function loadJSON(callback) {
   skirtObj.onreadystatechange = function () {
   if (skirtObj.readyState == 4 && skirtObj.status == "200") {
   
-  // .open will NOT return a value but simply returns undefined in async mode so use a callback
-  callback(skirtObj.responseText);
+    callback(skirtObj.responseText);
   
   }
   }
@@ -72,15 +54,15 @@ $(function() {
         var front_hip_arc = ((hip/2)/scale - (back_hip_arc)/scale + 0.5) * scale
         var hw = (hip - waist)/scale
         if (hw <= 4)
-            dart_distances = [0.75, 0, 0.5, 0];
+            dart_distances = [0.75*scale, 0*scale, 0.5*scale, 0*scale];
         else if (hw > 4 && hw <= 5) 
-            dart_distances = [1, 0, 0.5, 0];
+            dart_distances = [1*scale, 0*scale, 0.5*scale, 0*scale];
         else if (hw > 5 && hw <= 6)
-            dart_distances = [0.625, 0.625, 0.5, 0];
+            dart_distances = [0.625*scale, 0.625*scale, 0.5, 0*scale];
         else if (hw > 6 && hw <= 7)
-            dart_distances = [0.75, 0.75, 0.5, 0];
+            dart_distances = [0.75*scale, 0.75*scale, 0.5*scale, 0*scale];
         else if (hw > 7 && hw <= 9)
-            dart_distances = [0.875, 0.875, 0.375, 0.375];
+            dart_distances = [0.875*scale, 0.875*scale, 0.375*scale, 0.375*scale];
         else if (hw > 9 && hw <= 10)
             dart_distances = [1*scale, 1*scale, 0.5*scale, 0.5*scale];
         else if (hw > 10 && hw <= 11)
