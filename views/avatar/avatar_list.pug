@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+    .container
+      a(href='/pattern/avatar/create') Add
+
+      h3 Avatars List
+      .row
+        .col.s9.m7
+          each avatar in avatar_list
+            .card.horizontal
+              .card-stacked
+                .card-content
+                  strong
+                    a(href=avatar.url) #{avatar.name}
+          else
+            p You haven't created any avatars yet.

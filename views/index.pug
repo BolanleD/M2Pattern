@@ -1,0 +1,56 @@
+
+extends layout
+
+block content
+  h1.text-primary M2Pattern
+  p.lead M2Pattern is a web-based basic block creation software that lets you create your basic pattern blocks from measurements entered in the system. The main idea of the application is to speed up the process of generating a custom block using your measurements without having to manually draft it from  scratch yourself.  Each measurement is used to generate a basic pattern that you can download as an SVG file or print as a pdf. The SVG files can be manipulated after download using other CAD software such as Optitex, Photoshop and Illustrator to create your desired design. 
+  
+  br
+  if user
+    .row
+      .col-md-6
+        .card.h-48
+          h4.card-header Measuring
+          .card-body
+            p.card-text
+              | There are seven basic measurements needed to create the skirt draft. Check out a description of the required measurements and how to take them for each basic skirt block.
+          .card-footer
+            a.btn.btn-primary(href='/measure') Learn More
+      .col-md-6
+        .card.h-40
+          h4.card-header BuiltIn
+          .card-body
+            p.card-text
+              | The application has inbuilt basic measurements if you just need to create the basic blocks for the standard sizes 6 to 14. You do not need to create an account to use this feature.
+          .card-footer
+            a.btn.btn-primary(href='/pattern/skirts') Learn More
+  else 
+    .row
+      .col-md-4
+        .card.h-40
+          h4.card-header Accounts
+          .card-body
+            p.card-text
+              | As an individual, you can sign up for an account to create basic pattern blocks for yourself. You can create basic blocks for skirts, bodice and pants from your measurements.
+          .card-footer
+            a.btn.btn-primary(href='/users/register') Learn More
+      .col-md-4
+        .card.h-48
+          h4.card-header Measuring
+          .card-body
+            p.card-text
+              | There are seven basic measurements needed to create the skirt draft. Check out a description of the required measurements and how to take them for each basic skirt block.
+          .card-footer
+            a.btn.btn-primary(href='/measure') Learn More
+      .col-md-4
+        .card.h-40
+          h4.card-header BuiltIn
+          .card-body
+            p.card-text
+              | The application has inbuilt basic measurements if you just need to create the basic blocks for the standard sizes 6 to 14. You do not need to create an account to use this feature.
+          .card-footer
+            a.btn.btn-primary(href='/pattern/skirts') Learn More
+  
+
+
+  

@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+    .container
+      h1
+        strong #{client.name}
+      h5
+        | Phone: 
+        strong #{client.phone}
+      h5
+        | Email: 
+        strong #{client.email}
+  
+      br
+      if client_davatars.length
+        p #[strong Delete the following davatars before attempting to delete this client.]
+        div(style='margin-left:20px;margin-top:20px')
+          h5
+        
+          ul.collection
+          each davatar in client_davatars
+            li.collection-item
+              a(href=davatar.url) #{davatar.name}     
+      else
+        p #[Do you really want to delete this Client]
+    
+        form(method='POST' action='')
+          div.form-group
+            input#clientid.form-control(type='hidden',name='clientid', required='true', value=client._id )
+          button.btn.btn-primary(type='submit') Delete

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .container
+      h3 DB Contents
+      p #[strong Clients:] !{client_count}
+      p #[strong Avatars:] !{avatar_count}
+      p #[strong Client Avatars:] !{davatar_count}
+      p #[strong Users:] !{user_count}
+      h3 Users List
+      .row
+        .col.s7.m7
+          if users_list.length
+            each user in users_list
+              .card.horizontal
+                .card-stacked
+                  .card-content
+                    a(href='/users/'+user._id) #{user.name}

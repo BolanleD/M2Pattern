@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+    .container
+      h1 #{title}
+      .row
+        form(method='POST' action='')
+          div.form-group
+              label.col-form-label.font-weight-bold.text-right(for='name') Name
+              input#first_name.form-control(type='text', placeholder='Name of skirt' name='name' required='true' value=(undefined===skirt ? '' : skirt.name) step='0.01')
+          div.form-group
+              label.col-form-label.font-weight-bold.text-right(for='waist') Waist
+              input#waist.form-control(type='number', placeholder='0.00' name='waist' value=(undefined===skirt ? '' : skirt.waist) step='0.01' required='true')
+          div.form-group
+              label.col-form-label.font-weight-bold.text-right(for='hip') Hip
+              input#hip.form-control(type='number', placeholder='0.00' name='hip' value=(undefined===skirt ? '' : skirt.hip) step='0.01' required='true')
+          div.form-group
+              label.col-form-label.font-weight-bold.text-right(for='side_hip_depth') Side hip depth
+              input#side_hip_depth.form-control(type='number', placeholder='0.00' name='side_hip_depth' value=(undefined===skirt ? '' : skirt.side_hip_depth) step='0.01' required='true')
+          div.form-group
+              label.col-form-label.font-weight-bold.text-right(for='front_hip_depth') front hip depth
+              input#front_hip_depth.form-control(type='number', placeholder='0.00' name='front_hip_depth' value=(undefined===skirt ? '' : skirt.front_hip_depth) step='0.01' required='true')
+          div.form-group
+              label.col-form-label.font-weight-bold.text-right(for='back_hip_depth') back hip depth
+              input#back_hip_depth.form-control(type='number', placeholder='0.00' name='back_hip_depth' value=(undefined===skirt ? '' : skirt.back_hip_depth) step='0.01' required='true')
+          div.form-group
+              label.col-form-label.font-weight-bold.text-right(for='skirt_length') Skirt length
+              input#skirt_length.form-control(type='number', placeholder='0.00' name='skirt_length' value=(undefined===skirt ? '' : skirt.skirt_length) step='0.01' required='true')
+          div.form-group
+              label.col-form-label.font-weight-bold.text-right(for='back_hip_arc') Back hip arc
+              input#back_hip_arc.form-control(type='number', placeholder='0.00' name='back_hip_arc' value=(undefined===skirt ? '' : skirt.back_hip_arc) step='0.01' required='true')
+              
+          button.btn.btn-primary(type='submit', name='action') Submit

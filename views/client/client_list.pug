@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    .container
+      a.btn.btn-primary(href='/pattern/client/create') Add
+      h3 Clients List
+      .row
+        .col.s7.m7
+          each client in client_list
+            .card.horizontal
+              .card-stacked
+                .card-content
+                  strong 
+                    a(href=client.url) #{client.name}
+          else 
+            p You haven't created any clients yet.

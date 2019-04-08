@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+    .container
+      h1
+        strong #{davatar.name}
+      h4
+        | For 
+        strong 
+           a(href=davatar.client.url) #{davatar.client.name}
+      p #[strong Waist:] #{davatar.waist}
+      p #[strong Hip:] #{davatar.hip}
+      p #[strong SideHipDepth:] #{davatar.side_hip_depth}
+      p #[strong FrontHipDepth:] #{davatar.front_hip_depth}
+      p #[strong BackHipDepth:] #{davatar.back_hip_depth}
+      p #[strong SkirtLength:] #{davatar.skirt_length}
+      p #[strong BackHipArc:] #{davatar.back_hip_arc} 
+      hr
+      p Do you really want to delete this DAvatar?
+    
+      form(method='POST' action='')
+        div.form-group
+          input#id.form-control(type='hidden', name='id', required='true', value=davatar._id )
+
+        button.btn.btn-primary(type='submit') Delete     

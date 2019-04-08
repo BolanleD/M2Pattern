@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  h1= title
+  table(style='width:100%', border='1', )
+    tr
+      th Waist
+      th Hip
+      th SideHipDepth
+      th FrontHipDepth
+      th BackHipDepth
+      th SkirtLength
+      th BackHipArc
+
+    tr    
+      td= skirt.waist
+      td= skirt.hip
+      td= skirt.side_hip_depth
+      td= skirt.front_hip_depth
+      td= skirt.back_hip_depth
+      td= skirt.skirt_length
+      td= skirt.back_hip_arc
+  br
+  hr
+  canvas#papersc(width='1100', height='1000', style='border:1px solid #000000')
+  br
+  button#download-to-svg.btn.btn-primary DownloadSVG

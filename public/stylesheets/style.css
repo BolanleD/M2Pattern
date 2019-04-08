@@ -1,0 +1,30 @@
+body {
+  background: url(/images/background2.jpg);  
+  background-size: cover;
+	color:rgb(0, 0, 0);
+  background-color:rgb(255, 255, 255);
+  font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+  height: 100%;
+  width: 100%;
+} 
+.btn.btn-primary{
+  margin: 0.1em
+}
+.btn.btn-danger{
+  margin: 0.1em
+}
+.alert-error{
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.alert-success_msg{
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+canvas {
+  background: whitesmoke;
+  width: 60%;
+  height: 60%;
+}

@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  .container
+      h1
+        strong #{avatar.name}
+      p #[strong Waist:] #{avatar.waist}
+      p #[strong Hip:] #{avatar.hip}
+      p #[strong SideHipDepth:] #{avatar.side_hip_depth}
+      p #[strong FrontHipDepth:] #{avatar.front_hip_depth}
+      p #[strong BackHipDepth:] #{avatar.back_hip_depth}
+      p #[strong SkirtLength:] #{avatar.skirt_length}
+      p #[strong BackHipArc:] #{avatar.back_hip_arc}
+  
+  hr  
+  a.btn.btn-primary(href=avatar.url+'/draft') Draft
+  a.btn.btn-primary(href=avatar.url+'/update') Update
+  a.btn.btn-danger(href=avatar.url+'/delete') Delete
+  

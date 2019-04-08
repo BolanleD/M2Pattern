@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  .container
+      h1
+        strong #{client.name}
+      h5
+        | Phone: 
+        strong #{client.phone}
+      h5
+        | Email: 
+        strong #{client.email}
+  
+      br
+    
+      h5
+        strong DAvatars for this client
+      br
+      ul.collection
+            each davatar in client_davatars
+              li.collection-item
+                  a(href=davatar.url) #{davatar.name}     
+            else
+              p This client has no davatars.
+  hr
+  a.btn.btn-primary(href='/pattern/davatar/create') AddAvatar
+  a.btn.btn-primary(href=client.url+'/update') UpdateClient
+  a.btn.btn-danger(href=client.url+'/delete') Delete
+  

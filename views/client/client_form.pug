@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+    .container
+      h1 #{title}
+      .row
+        form(method='POST' action='')
+          #form-group.col-6
+            .input-field.col.s4
+              label(for='first_name') First Name
+              input#first_name.validate(type='text', placeholder='First name' name='first_name' required='true' value=(undefined===client ? '' : client.first_name) )
+          #form-group.col-6
+            .input-field.col.s4
+              label(for='last_name') Last Name
+              input#last_name.validate(type='text', placeholder='Family name (surname)' name='family_name' required='true' value=(undefined===client ? '' : client.family_name))
+          #form-group.col-6
+            .input-field.col.s4
+              label(for='phone') Phone number
+              input#phone.validate(type='text', placeholder='phone number' name='phone', value=(undefined===client ? '' : client.phone) )             
+          #form-group.col-6
+            .input-field.col.s4
+              label(for='email') Email
+              input#email.validate(type='text', name='email', placeholder='email' value=(undefined===client ? '' : client.email) )
+              
+          button.btn.btn-primary(type='submit', name='action') Submit
+        if errors 
+          ul
+             for error in errors
+                 li!= error.msg

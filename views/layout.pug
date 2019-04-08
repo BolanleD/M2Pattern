@@ -1,0 +1,59 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet' href='/stylesheets/style.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf' crossorigin='anonymous')
+  body
+    nav.navbar.navbar-expand-sm.navbar-dark.bg-dark
+      a.navbar-brand(href='/') M2Pattern
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExample03', aria-controls='navbarsExample03', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExample03.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/') Home
+          li.nav-item
+            a.nav-link(href='/measure') Measurement
+          li.nav-item
+            a.nav-link(href='/pattern/skirts') Standard
+          if user && user.role == 2
+            li.nav-item
+              a.nav-link(href='/pattern/report')  AllItems
+            li.nav-item
+              a.nav-link(href='/pattern/skirt/create') AddSize
+          else if user && user.role == 1
+            li.nav-item
+              a.nav-link(href='/pattern/client/create')  AddClient
+            li.nav-item
+              a.nav-link(href='/pattern/clients')  AllClients
+            li.nav-item
+              a.nav-link(href='/pattern/davatar/create')  AddAvatar
+            li.nav-item
+              a.nav-link(href='/pattern/davatars')  AllAvatars
+          else if user && user.role == 0
+            li.nav-item
+              a.nav-link(href='/pattern/avatar/create')  AddAvatar
+            li.nav-item
+              a.nav-link(href='/pattern/avatars')  AllAvatars
+        ul.navbar-nav.navbar-right
+          if user 
+            a.nav-link(href='/users/logout') Logout
+            a.nav-link(href='/users/'+user._id) #{user.username}
+          else
+            li.nav-item
+              a.nav-link(href='/users/register') Signup
+            li.nav-item
+              a.nav-link(href='/users/login') Login
+    .container
+      br
+      != messages('message', locals)
+      block content
+      br
+    script(src='/bower_components/jquery/dist/jquery.js')  
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+    script(type='text/javascript' src='/bower_components/paper/dist/paper-full.js') 
+    script(type='text/javascript' src='/javascripts/data.json')
+    script(src='/javascripts/main.js' canvas='papersc')
+ 

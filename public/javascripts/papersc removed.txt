@@ -1,0 +1,35 @@
+//currently name doesn't seem to work in some browsers.
+//Save SVG from paper.js as a file.
+/*
+document.addEventListener("DOMContentLoaded", function(event) { 
+    document.getElementById("download-as-svg").onclick = function(){
+     var fileName = "custom.svg"
+     var url = "data:image/svg+xml;utf8," + encodeURIComponent(paper.project.exportSVG({asString:true}));
+     var link = document.createElement("a");
+     link.download = fileName;
+     link.href = url;
+     link.click();
+    }
+   });
+   /*
+   var client = new XMLHttpRequest();
+   client.open('GET', '/json/measurements.json');
+   client.onreadystatechange = function() {
+     //your data is in client.responseText
+     console.log(client.responseText);
+   }*/
+   /*
+   client.send();
+   $.getJSON('/json/measurements.json', function (data) {
+     project.importJSON(data);
+});
+ *//*
+
+      //Draw a circle
+      var radius = client.responseText.waist;
+      var circle = new Shape.Circle(new Point(50,50), radius);
+      circle.strokeColor = "#333333";
+      circle.fillColor = "#0084B0";*/
+
+//currently name doesn't seem to work in some browsers.
+//Save SVG from paper.js as a file.

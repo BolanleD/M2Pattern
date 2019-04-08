@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+    .container
+      if user && user.role==2
+        a(href='/pattern/skirt/create') Add
+      h3 Skirts List
+      .row
+        .col.s9.m7
+          each skirt in skirt_list
+            .card.horizontal
+              .card-stacked
+                .card-content
+                  strong
+                    a(href=skirt.url) #{skirt.name}
+          else 
+          p You haven't added any skirts yet.

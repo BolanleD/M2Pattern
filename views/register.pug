@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    h1 Register
+    .row
+      form(method='POST', action='/users/register')
+        div.form-group
+          label.col-form-label.font-weight-bold.text-right(for='name') Name:
+          input.form-control(name='name', type='text', autofocus)
+        div.form-group
+          label.col-form-label.font-weight-bold.text-right(for='email') Email:
+          input.form-control(name='email', type='email' placeholder='example@address.com')
+        div.form-group
+          label.col-form-label.font-weight-bold.text-right(for='username') Username:
+          input.form-control(name='username', type='text')
+        div.form-group
+          label.col-form-label.font-weight-bold.text-right(for='password') Password:
+          input.form-control(name='password', type='password')
+        div.form-group
+          label.col-form-label.font-weight-bold.text-right(for='password2') Confirm password:
+          input.form-control(name='password2', type='password')
+        div.form-group
+          label.col-form-label.font-weight-bold.text-right(for='role') Role:
+          -const roleOptions = [{value: 0, text: 'individual'},{value: 1, text: 'designer'}]
+            select.form-control(type='select', name='role' required='true' )
+              each option in roleOptions
+                if (option.value === role)
+                  option(value=(option.value) selected) #{option.text}
+                else
+                  option(value=(option.value)) #{option.text}
+        br
+        input.btn.btn-primary(type='submit', value='Submit')
