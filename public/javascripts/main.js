@@ -9,6 +9,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 });
 
+document.addEventListener('DOMContentLoaded', init, false);
+
+function init() {
+  const VidPlay = document.getElementById('videoPlayer')
+  const VidToggle = document.getElementById('toggleButton')
+
+  VidToggle.addEventListener('click', function() {
+    if (VidPlay.paused) VidPlay.play()
+    else VidPlay.pause()
+ })
+}
+
 
 function loadJSON(callback) {
 

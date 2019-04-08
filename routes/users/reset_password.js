@@ -41,8 +41,8 @@ router.post('/login/forgot', (req, res, next) => {
         host: 'smtp.ethereal.email',
         port: 587,
         auth: {
-          user: 'akeem51@ethereal.email',
-          pass: 'CymF9pZsX8vhzb3Wxd'
+          user: 'keenan79@ethereal.email',
+          pass: 'eVV3eZYcQb6Jz79cnq'
         }
       });
       let mailOptions = {
@@ -146,8 +146,8 @@ router.post('/reset/:token',[
           host: 'smtp.ethereal.email',
           port: 587,
           auth: {
-            user: 'akeem51@ethereal.email',
-            pass: 'CymF9pZsX8vhzb3Wxd'
+            user: 'keenan79@ethereal.email',
+            pass: 'eVV3eZYcQb6Jz79cnq'
           }
         });
         let mailOptions = {
